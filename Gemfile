@@ -8,6 +8,12 @@ gem 'sqlite3'
 
 gem 'mysql2'
 
+# devise, cancan, rolify for user/role
+
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -35,6 +41,9 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# Breadcrumbs
+gem 'breadcrumbs_on_rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

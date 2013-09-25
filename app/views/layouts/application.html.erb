@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gi</title>
+  <title>GI</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <%= link_to "GI", '/', class: "brand", id: "logo" %>
+        <nav>
+          <ul class="nav">
+            <li><%= link_to "Inventory", '#' %></li>
+          </ul>
+          <ul class="nav pull-right">
+            <% if user_signed_in? %>
+              <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid breadcrumbs">
+    <%= render_breadcrumbs %>
+  </div>
+  <div class="container-fluid">
+    <% if notice %><p class="notice"><%= notice %></p><% end %>
+    <% if alert %><p class="alert"><%= alert %></p><% end %>
+  </div>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
 </body>
 </html>
