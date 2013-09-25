@@ -4,5 +4,13 @@ Gi::Application.routes.draw do
   	:sign_out => 'logout'
   }
   
+  namespace :inventory do
+    get '/' => 'root#index'
+  end
+
+  namespace :equipment do
+  	get '/' => 'root#index'
+  end
+
   root 'open#index'
 end

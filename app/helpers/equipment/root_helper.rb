@@ -1,0 +1,2 @@
+module Equipment::RootHelper
+end
